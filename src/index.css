@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  body {
+    @apply bg-gray-900 text-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium text-white;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+
+  h4 {
+    @apply text-lg md:text-xl;
+  }
+
+  /* Remove Chrome's autofill background color */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px rgb(17, 24, 39) inset;
+    -webkit-text-fill-color: rgb(243, 244, 246);
+    box-shadow: 0 0 0px 1000px rgb(17, 24, 39) inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-primary-900/50 text-white hover:bg-primary-800/50 focus:ring-2 focus:ring-primary-500/50 border border-white/10;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-900/50 text-white hover:bg-gray-800/50 focus:ring-2 focus:ring-gray-500/50 border border-white/10;
+  }
+
+  .btn-success {
+    @apply bg-success-900/50 text-white hover:bg-success-800/50 focus:ring-2 focus:ring-success-500/50 border border-white/10;
+  }
+
+  .btn-warning {
+    @apply bg-warning-900/50 text-white hover:bg-warning-800/50 focus:ring-2 focus:ring-warning-500/50 border border-white/10;
+  }
+
+  .btn-error {
+    @apply bg-error-900/50 text-white hover:bg-error-800/50 focus:ring-2 focus:ring-error-500/50 border border-white/10;
+  }
+
+  .btn-sm {
+    @apply px-2.5 py-1.5 text-xs;
+  }
+
+  .btn-lg {
+    @apply px-6 py-3 text-base;
+  }
+
+  .input {
+    @apply block w-full rounded-md border-0 bg-gray-900/50 py-1.5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-primary-500 sm:text-sm sm:leading-6;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+
+  .badge-primary {
+    @apply bg-primary-900/50 text-primary-100 ring-1 ring-primary-500/30;
+  }
+
+  .badge-secondary {
+    @apply bg-secondary-900/50 text-secondary-100 ring-1 ring-secondary-500/30;
+  }
+
+  .badge-success {
+    @apply bg-success-900/50 text-success-100 ring-1 ring-success-500/30;
+  }
+
+  .badge-warning {
+    @apply bg-warning-900/50 text-warning-100 ring-1 ring-warning-500/30;
+  }
+
+  .badge-error {
+    @apply bg-error-900/50 text-error-100 ring-1 ring-error-500/30;
+  }
+
+  .card {
+    @apply bg-gray-900/40 backdrop-blur-md rounded-lg shadow-card hover:shadow-card-hover transition-all duration-200 border border-white/10;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-700 rounded-full hover:bg-primary-600 transition-colors;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply bg-gray-900/40 backdrop-blur-md border border-white/10;
+  }
+
+  /* Glow effects */
+  .glow {
+    @apply shadow-glow hover:shadow-glow-strong transition-shadow duration-300;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-accent-400;
+  }
+
+  /* Calendar Dark Theme */
+  .calendar-dark {
+    @apply text-white;
+  }
+
+  .calendar-dark .rbc-toolbar {
+    @apply mb-4;
+  }
+
+  .calendar-dark .rbc-toolbar button {
+    @apply bg-gray-900/50 text-white border border-white/10 hover:bg-gray-800/50 focus:outline-none focus:ring-2 focus:ring-primary-500/50;
+  }
+
+  .calendar-dark .rbc-toolbar button.rbc-active {
+    @apply bg-primary-900/50 border-primary-500/30;
+  }
+
+  .calendar-dark .rbc-month-view,
+  .calendar-dark .rbc-time-view {
+    @apply border border-white/10 rounded-lg overflow-hidden;
+  }
+
+  .calendar-dark .rbc-header,
+  .calendar-dark .rbc-time-header-cell {
+    @apply bg-gray-900/50 text-white border-white/10 py-2;
+  }
+
+  .calendar-dark .rbc-day-bg {
+    @apply bg-gray-900/20 border-white/10;
+  }
+
+  .calendar-dark .rbc-today {
+    @apply bg-primary-900/20;
+  }
+
+  .calendar-dark .rbc-off-range-bg {
+    @apply bg-gray-900/40;
+  }
+
+  .calendar-dark .rbc-event {
+    @apply rounded-md border-none shadow-sm;
+  }
+
+  .calendar-dark .rbc-event.rbc-selected {
+    @apply ring-2 ring-primary-500;
+  }
+
+  .calendar-dark .rbc-time-slot {
+    @apply border-white/10;
+  }
+
+  .calendar-dark .rbc-time-content {
+    @apply border-white/10;
+  }
+
+  .calendar-dark .rbc-current-time-indicator {
+    @apply bg-primary-500;
+  }
+}
